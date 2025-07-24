@@ -2,8 +2,8 @@ name: Upload Example Artifact
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - 'v*.*.*'
 
 jobs:
   upload-artifact:
