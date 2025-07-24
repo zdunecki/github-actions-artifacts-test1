@@ -2,7 +2,8 @@ name: Upload Example Artifact
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
   upload-artifact:
@@ -14,8 +15,9 @@ jobs:
       - name: Create example file
         run: echo "This is an example file." > example.txt
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v2
         with:
-          name: example-artifact
-          path: example.txt
+          files: example.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
