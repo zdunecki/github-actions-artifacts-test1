@@ -1,0 +1,19 @@
+{
+    "title": "Node.js Support",
+    "toolGroups": [
+        [
+            {
+                "tool": "bun",
+                "supported": true
+            },
+            {
+                "tool": "pnpm",
+                "supported": true
+            },
+            {
+                "tool": "npm",
+                "supported": true
+            }
+        ]
+    ]
+}

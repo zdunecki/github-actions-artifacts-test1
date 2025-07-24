@@ -12,12 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create example file
-        run: echo "This is an example file." > example.txt
+      # Removed step to create example.txt, as we will upload data.json instead
 
       - name: Create Release and Upload Asset
         uses: softprops/action-gh-release@v2
         with:
-          files: example.txt
+          files: data.json
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
